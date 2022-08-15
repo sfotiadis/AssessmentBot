@@ -8,7 +8,7 @@
 		// Append -bullseye or -buster to pin to an OS version.
 		// Use -bullseye variants on local on arm64/Apple Silicon.
 		"args": { 
-			"VARIANT": "18-bullseye"
+			"VARIANT": "16-bullseye"
 		}
 	},
 
@@ -18,7 +18,8 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"TeamsDevApp.ms-teams-vscode-extension"
 			]
 		}
 	},
@@ -27,8 +28,9 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm install ; npm i -g @microsoft/adaptivecards-tools"
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	//"remoteUser": "node"
+
 }
